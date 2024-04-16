@@ -12,15 +12,8 @@ namespace MiniGame.Scripts.UI
         [SerializeField] private Button _redButton;
         [SerializeField] private Button _whiteButton;
 
-        private SelectedCondition _selectedCondition;
-        private MiniGame _miniGame;
+        public event Action<ConditionType> ConditionSelected; 
 
-        public void Construct(SelectedCondition condition, MiniGame game)
-        {
-            _selectedCondition = condition;
-            _miniGame = game;
-        }
-        
         private void OnEnable()
         { 
             _allButton.onClick.AddListener(OnAllButtonClicked);
@@ -49,12 +42,8 @@ namespace MiniGame.Scripts.UI
         private void OnAllButtonClicked() => 
             StartGame(ConditionType.PickedAll);
 
-        private void StartGame(ConditionType type)
-        {
-            _selectedCondition.SwitchConditionTo(type);
-            _miniGame.Start();
-            Hide();
-        }
+        private void StartGame(ConditionType type) => 
+            ConditionSelected?.Invoke(type);
 
         public void Show() => 
             gameObject.SetActive(true);

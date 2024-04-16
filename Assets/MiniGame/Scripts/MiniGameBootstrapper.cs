@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using MiniGame.Scripts.AssetManagement;
 using MiniGame.Scripts.Data;
 using MiniGame.Scripts.Gameplay.Balls;
@@ -13,10 +14,9 @@ namespace MiniGame.Scripts
 {
     public class MiniGameBootstrapper : MonoBehaviour
     {
-        private UIRoot _uiRoot;
-        private MiniGame _game;
+        private GameUI _gameUI;
         
-        private void Start()
+        private void Awake()
         {
             var assets = new ResourcesAssets();
             var gameSettings = new SettingsAsset(assets);
@@ -46,17 +46,15 @@ namespace MiniGame.Scripts
             var game = new MiniGame(ballRegistry, pickerFactory, ballViewFactory, generator, staticData, selectedCondition);
 
             var uiAsset = new UIRootAsset(assets);
-            var uiFactory = new UIFactory(uiAsset, game, selectedCondition);
+            var uiFactory = new UIFactory(uiAsset);
 
-            _uiRoot = uiFactory.CreateUIRoot();
-            _game = game;
-            _game.Completed += OnCompleted;
+            _gameUI = new GameUI(game, selectedCondition, uiFactory);
         }
 
-        private void OnCompleted()
-        {
-            _game.Stop();
-            _uiRoot.Show();
-        }
+        private void Start() => 
+            _gameUI.Start();
+
+        private void OnDestroy() => 
+            _gameUI.Stop();
     }
 }

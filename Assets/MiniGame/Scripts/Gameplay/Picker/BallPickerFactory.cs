@@ -23,7 +23,10 @@ namespace MiniGame.Scripts.Gameplay.Picker
             return instance;
         }
 
-        public void Clear() => 
-            Object.Destroy(_picker.gameObject);
+        public void Clear()
+        {
+            if (_picker != null)
+                Object.Destroy(_picker.gameObject);
+        }
     }
 }
