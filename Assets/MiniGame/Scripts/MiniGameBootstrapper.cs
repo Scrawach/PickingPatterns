@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using MiniGame.Scripts.AssetManagement;
 using MiniGame.Scripts.Data;
+using MiniGame.Scripts.Environment;
 using MiniGame.Scripts.Gameplay.Balls;
 using MiniGame.Scripts.Gameplay.Balls.View;
 using MiniGame.Scripts.Gameplay.Conditions;
@@ -46,7 +47,8 @@ namespace MiniGame.Scripts
             };
 
             var selectedCondition = new SelectedCondition(conditions);
-            var game = new MiniGame(ballRegistry, pickerFactory, ballViewFactory, generator, staticData, selectedCondition);
+            var world = new WorldBuilder(ballRegistry, staticData, generator, ballViewFactory);
+            var game = new MiniGame(world, pickerFactory, selectedCondition);
 
             var uiAsset = new UIRootAsset(assets);
             var uiFactory = new UIFactory(uiAsset);
