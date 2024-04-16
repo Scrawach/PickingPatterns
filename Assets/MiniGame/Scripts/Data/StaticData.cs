@@ -10,6 +10,7 @@ namespace MiniGame.Scripts.Data
     {
         private readonly SettingsAsset _settings;
         private BallMaterial[] _materials;
+        private LevelGeneratorData _generatorData;
 
         public StaticData(SettingsAsset settings) => 
             _settings = settings;
@@ -18,7 +19,11 @@ namespace MiniGame.Scripts.Data
         {
             var settings = _settings.Load();
             _materials = settings.Materials;
+            _generatorData = settings.GeneratorData;
         }
+
+        public LevelGeneratorData GetGeneratorData() => 
+            _generatorData;
 
         public IReadOnlyList<BallMaterial> AllMaterials() => 
             _materials;

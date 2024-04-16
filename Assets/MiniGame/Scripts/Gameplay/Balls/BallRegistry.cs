@@ -25,5 +25,8 @@ namespace MiniGame.Scripts.Gameplay.Balls
 
             _balls[type].Add(ball);
         }
+
+        public void Clear() => 
+            _balls.Clear();
     }
 }

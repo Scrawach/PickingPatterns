@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a40ffe52daf84612b1fe4113170664c5, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
+  GeneratorData:
+    Center: {x: 0, y: 0, z: 0}
+    AmountOfBalls: 25
+    FieldRadius: 5
   Materials:
   - Type: 0
     Material: {fileID: 2100000, guid: 773912a70066b2443912046ad14c10e7, type: 2}

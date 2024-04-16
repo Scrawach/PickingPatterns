@@ -17,14 +17,15 @@ namespace MiniGame.Scripts.Gameplay.Generators
             _staticData = staticData;
         }
 
-        public void Generate(Vector3 center, float amountOfBalls, float radius)
+        public void Generate()
         {
             var availableMaterials = _staticData.AllMaterials();
+            var levelData = _staticData.GetGeneratorData();
 
-            for (var i = 0; i < amountOfBalls; i++)
+            for (var i = 0; i < levelData.AmountOfBalls; i++)
             {
-                var randomCircle = Random.insideUnitCircle * radius;
-                var randomPosition = center + new Vector3(randomCircle.x, 0, randomCircle.y);
+                var randomCircle = Random.insideUnitCircle * levelData.FieldRadius;
+                var randomPosition = levelData.Center + new Vector3(randomCircle.x, 0, randomCircle.y);
                 var randomType = GetRandomBallType(availableMaterials);
                 _factory.Create(randomType, randomPosition);
             }
