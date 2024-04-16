@@ -1,8 +1,7 @@
-﻿using System;
-using MiniGame.Scripts.Gameplay.Balls.View;
+﻿using MiniGame.Scripts.Gameplay.Balls.View;
 using UnityEngine;
 
-namespace MiniGame.Scripts.Gameplay.Picker
+namespace MiniGame.Scripts.UserInput
 {
     public class UnityInput : IInput
     {

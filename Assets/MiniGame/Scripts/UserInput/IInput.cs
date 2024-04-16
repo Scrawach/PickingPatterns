@@ -1,6 +1,6 @@
 ﻿using MiniGame.Scripts.Gameplay.Balls.View;
 
-namespace MiniGame.Scripts.Gameplay.Picker
+namespace MiniGame.Scripts.UserInput
 {
     public interface IInput
     {

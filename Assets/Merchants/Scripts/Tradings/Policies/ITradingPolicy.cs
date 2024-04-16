@@ -1,5 +1,4 @@
-﻿using Merchants.Gameplay;
-using Merchants.Gameplay.PlayerLogic;
+﻿using Merchants.Gameplay.PlayerLogic;
 
 namespace Merchants.Tradings.Policies
 {
