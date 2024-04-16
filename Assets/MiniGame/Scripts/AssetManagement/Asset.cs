@@ -16,10 +16,7 @@ namespace MiniGame.Scripts.AssetManagement
         public TAsset Load() => 
             _assets.Load<TAsset>(_pathToAsset);
 
-        public TAsset Instantiate(Vector3 at, Quaternion rotation)
-        {
-            var prefab = Load();
-            return Object.Instantiate(prefab, at, rotation);
-        }
+        public TAsset Instantiate(Vector3 at, Quaternion rotation) => 
+            Object.Instantiate(Load(), at, rotation);
     }
 }
