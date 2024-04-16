@@ -148,7 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8882303259363961072}
-  - component: {fileID: 1475848730775754056}
+  - component: {fileID: 8472001248911287524}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -172,7 +172,7 @@ Transform:
   - {fileID: 951632928128337440}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1475848730775754056
+--- !u!114 &8472001248911287524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4478104911134253447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f92b892d4b294795b3f670e8119c8c56, type: 3}
+  m_Script: {fileID: 11500000, guid: 77384233eac74ef981e8ba8e94295789, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <ShootPoint>k__BackingField: {fileID: 8944866668779840969}
