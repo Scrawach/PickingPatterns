@@ -36,6 +36,11 @@ public class GroundedState : MovementState
         base.AddInputActionsCallbacks();
 
         Input.Movement.Jump.started += OnJumpKeyPressed;
+        Input.Movement.IsWalking.started += OnWalkingPressed;
+        Input.Movement.IsRunning.started += OnFastRunningPressed;
+
+        Input.Movement.IsWalking.canceled += OnCanceledSpecificMovement;
+        Input.Movement.IsRunning.canceled += OnCanceledSpecificMovement;
     }
 
     protected override void RemoveInputActionsCallbacks()
@@ -43,7 +48,15 @@ public class GroundedState : MovementState
         base.RemoveInputActionsCallbacks();
 
         Input.Movement.Jump.started -= OnJumpKeyPressed;
+        Input.Movement.IsWalking.started -= OnWalkingPressed;
+        Input.Movement.IsRunning.started -= OnFastRunningPressed;
+        
+        Input.Movement.IsWalking.canceled -= OnCanceledSpecificMovement;
+        Input.Movement.IsRunning.canceled -= OnCanceledSpecificMovement;
     }
 
+    private void OnCanceledSpecificMovement(InputAction.CallbackContext obj) => StateSwitcher.SwitchState<RunningState>();
     private void OnJumpKeyPressed(InputAction.CallbackContext obj) => StateSwitcher.SwitchState<JumpingState>();
+    private void OnWalkingPressed(InputAction.CallbackContext obj) => StateSwitcher.SwitchState<WalkingState>();
+    private void OnFastRunningPressed(InputAction.CallbackContext obj) => StateSwitcher.SwitchState<FastRunningState>();
 }

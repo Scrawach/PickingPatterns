@@ -35,4 +35,12 @@ public class CharacterView : MonoBehaviour
 
     public void StartMovement() => _animator.SetBool(IsMovement, true);
     public void StopMovement() => _animator.SetBool(IsMovement, false);
+
+    public void StartFastRunning() { }
+
+    public void StopFastRunning() { }
+    
+    public void StarWalking() { }
+    
+    public void StopWalking() { }
 }
