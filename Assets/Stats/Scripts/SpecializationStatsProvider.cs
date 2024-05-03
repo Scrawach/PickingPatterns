@@ -12,8 +12,8 @@ namespace Stats.Scripts
             _targetSpecialization = targetSpecialization;
             _origin = origin;
         }
-        
-        public Stats Create() => 
+
+        public Stats Create() =>
             _origin.Create() * SpecializationStats();
 
         private Stats SpecializationStats() =>
