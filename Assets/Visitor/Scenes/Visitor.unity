@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySpawner: {fileID: 1134584158}
-  _maxSpawnerWeight: 0
+  _maxSpawnerWeight: 5
 --- !u!4 &1134584160
 Transform:
   m_ObjectHideFlags: 0

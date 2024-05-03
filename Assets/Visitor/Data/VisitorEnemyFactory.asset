@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: VisitorEnemyFactory
   m_EditorClassIdentifier: 
   _humanPrefab: {fileID: 6435351670549428041, guid: 18ad3b5da087b1b0d87a3daf5e41ee9d, type: 3}
-  _elfPrefab: {fileID: 0}
+  _elfPrefab: {fileID: -5957176208756314510, guid: 4ad3f67d605c66351891f965d8234b8d, type: 3}

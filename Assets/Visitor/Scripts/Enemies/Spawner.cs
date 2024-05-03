@@ -52,6 +52,7 @@ namespace Visitor.Scripts.Enemies
                 enemy.MoveTo(_spawnPoints[UnityEngine.Random.Range(0, _spawnPoints.Count)].position);
                 enemy.Died += OnEnemyDied;
                 _spawnedEnemies.Add(enemy);
+                Spawned?.Invoke(enemy);
                 yield return new WaitForSeconds(_spawnCooldown);
             }
         }
