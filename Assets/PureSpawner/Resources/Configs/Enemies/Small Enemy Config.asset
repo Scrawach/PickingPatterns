@@ -15,4 +15,4 @@ MonoBehaviour:
   <EnemyType>k__BackingField: 0
   <Prefab>k__BackingField: {fileID: 8081717363317167201, guid: bdeabfdb0ad54014db772096b29e224a, type: 3}
   <Health>k__BackingField: 0
-  <Speed>k__BackingField: 0
+  <Speed>k__BackingField: 7

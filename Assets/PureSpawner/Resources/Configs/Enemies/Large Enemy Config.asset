@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <EnemyType>k__BackingField: 2
   <Prefab>k__BackingField: {fileID: 8810901353023783625, guid: 3c292cd9b69b6c448a5612e260cb5b80, type: 3}
-  <Health>k__BackingField: 0
-  <Speed>k__BackingField: 0
+  <Health>k__BackingField: 5
+  <Speed>k__BackingField: 3
