@@ -1,4 +1,5 @@
 ﻿using PureSpawner.Gameplay.Enemies;
+using PureSpawner.Gameplay.Enemies.Services;
 using PureSpawner.Infrastructure.Pausing;
 using UnityEngine;
 using Zenject;
