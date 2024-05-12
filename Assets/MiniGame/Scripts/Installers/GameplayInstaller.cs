@@ -20,7 +20,6 @@ namespace MiniGame.Scripts.Installers
     {
         public override void InstallBindings()
         {
-            BindInfrastructure();
             BindAssets();
             BindServices();
             BindFactories();
@@ -28,21 +27,11 @@ namespace MiniGame.Scripts.Installers
             BindEntryPoint();
         }
 
-        private void BindInfrastructure()
-        {
-            Container.Bind<ZenjectSceneLoaderWrapper>().AsSingle();
-            Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
-            Container.Bind<SceneLoaderMediator>().AsSingle();
-        }
-
         private void BindAssets()
         {
-            Container.Bind<IAssets>().To<ResourcesAssets>().AsSingle();
             Container.Bind<SettingsAsset>().AsSingle();
             Container.Bind<BallAsset>().AsSingle();
             Container.Bind<BallPickerAsset>().AsSingle();
-            Container.Bind<MainMenuPanelAsset>().AsSingle();
-            Container.Bind<VictoryPanelAsset>().AsSingle();
         }
 
         private void BindServices()
@@ -63,7 +52,6 @@ namespace MiniGame.Scripts.Installers
         {
             Container.Bind<BallPickerFactory>().AsSingle();
             Container.Bind<BallViewFactory>().AsSingle();
-            Container.Bind<UIFactory>().AsSingle();
         }
 
         private void BindEntryPoint() => 
