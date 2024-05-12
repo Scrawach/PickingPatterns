@@ -3,9 +3,9 @@ using MiniGame.Scripts.Gameplay.Conditions;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MiniGame.Scripts.UI
+namespace MiniGame.Scripts.UI.View
 {
-    public class UIRoot : MonoBehaviour
+    public class MainMenuPanel : MonoBehaviour
     {
         [SerializeField] private Button _allButton;
         [SerializeField] private Button _greenButton;

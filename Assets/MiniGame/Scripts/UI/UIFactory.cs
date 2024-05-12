@@ -1,15 +1,24 @@
-﻿using UnityEngine;
+﻿using MiniGame.Scripts.UI.Assets;
+using MiniGame.Scripts.UI.View;
+using UnityEngine;
 
 namespace MiniGame.Scripts.UI
 {
     public class UIFactory
     {
-        private readonly UIRootAsset _asset;
+        private readonly MainMenuPanelAsset _mainMenuPanelAsset;
+        private readonly VictoryPanelAsset _victoryPanelAsset;
 
-        public UIFactory(UIRootAsset asset) => 
-            _asset = asset;
+        public UIFactory(MainMenuPanelAsset mainMenuPanelAsset, VictoryPanelAsset victoryPanelAsset)
+        {
+            _mainMenuPanelAsset = mainMenuPanelAsset;
+            _victoryPanelAsset = victoryPanelAsset;
+        }
 
-        public UIRoot CreateUIRoot() => 
-            _asset.Instantiate(Vector3.zero, Quaternion.identity);
+        public MainMenuPanel CreateMainMenuPanel() => 
+            _mainMenuPanelAsset.Instantiate(Vector3.zero, Quaternion.identity);
+
+        public VictoryPanel CreateVictoryPanel() =>
+            _victoryPanelAsset.Instantiate(Vector3.zero, Quaternion.identity);
     }
 }
