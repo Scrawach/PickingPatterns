@@ -1,19 +1,18 @@
 ﻿using System;
 using MiniGame.Scripts.CameraLogic;
-using MiniGame.Scripts.SceneManagement;
 using MiniGame.Scripts.UI;
 using UnityEngine;
 using Zenject;
 
-namespace MiniGame.Scripts.Installers
+namespace MiniGame.Scripts
 {
-    public class GameLoop : IInitializable, IDisposable
+    public class GameplayLoop : IInitializable, IDisposable
     {
         private readonly MiniGame _game;
         private readonly CameraProvider _camera;
         private readonly GameplayUI _gameplayUI;
 
-        public GameLoop(MiniGame game, CameraProvider camera, GameplayUI gameplayUI)
+        public GameplayLoop(MiniGame game, CameraProvider camera, GameplayUI gameplayUI)
         {
             _game = game;
             _camera = camera;

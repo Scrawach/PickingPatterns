@@ -24,6 +24,7 @@ namespace MiniGame.Scripts.Installers
             BindAssets();
             BindServices();
             BindFactories();
+            
             BindEntryPoint();
         }
 
@@ -66,6 +67,6 @@ namespace MiniGame.Scripts.Installers
         }
 
         private void BindEntryPoint() => 
-            Container.BindInterfacesAndSelfTo<GameLoop>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<GameplayLoop>().AsSingle().NonLazy();
     }
 }
